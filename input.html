@@ -10,7 +10,19 @@ div#messageArea {
 	color: rgb(83, 175, 19);
 }
 </style>
-
+<script>
+var Input = document.getElementById("Input");
+Input.onkeypress = handleKeyPress;
+function handleKeyPress(e)
+{
+	var okButton = document.getElementById("okButton");
+	if(e.keyCode === 13)
+	{
+		okButton.click();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 <form action="http://127.0.0.1:8081/output.html"  method = "GET">

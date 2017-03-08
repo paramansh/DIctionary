@@ -14,7 +14,7 @@ http.createServer( function (request, response) {
    	mymodule(query,callback2);
     function callback2(data)
    	{
-   	  	console.log("no");
+   	  	
    	 		console.log(data);
   	 		toprint = data;
    	}
