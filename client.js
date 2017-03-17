@@ -4,9 +4,11 @@ module.exports = function(keyword,callback2)
 	var http = require("http");
 	function callback(response)
 	{
+   var fulldate = "";
 	 response.setEncoding("utf8");
 	 response.on("data",function(data)
 	 {
+		 fulldate += data;
 		 var meaning = "not found";
 	 	//dictionary check
 		var mng = data.split("\n");
@@ -21,6 +23,9 @@ module.exports = function(keyword,callback2)
 
 	 	callback2(meaning);
 	 });
+	 response.on("end", function() {
+		 console.log("Full data = " + fulldate);
+	 })
 
 	}
 
